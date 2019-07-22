@@ -1,0 +1,14 @@
+<div class="card">
+  <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="card-img-top"
+  [ngStyle]="{'background-image': 'url( ' + recipe.imagePath + ')'}"
+  >
+  <div class="card-body">
+    <h3 class="card-title">{{recipe.name}}</h3>
+    <p class="card-text">{{recipe.description}}</p>
+    <ul class="list-group mb-2">
+      <li *ngFor="let ingredient of recipe.ingredients"
+        class="list-group-item">{{ingredient.name}} - {{ingredient.amount}}</li>
+    </ul>
+    <app-recipe-dropdown [recipe]="recipe" [recipeIndex]="recipeIndex"></app-recipe-dropdown>
+  </div>
+</div>

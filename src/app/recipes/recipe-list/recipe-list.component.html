@@ -1,0 +1,10 @@
+
+<div class="row card-group">
+  <app-recipe-item *ngFor="let recipe of recipes; let i = index"
+                   class="col-sm-6 col-md-4 px-0"
+                   [ngClass]="{'col-xl-4': recipeSelectedList, 'col-xl-2': !recipeSelectedList}"
+                   [recipe] = recipe
+                   [recipeIndex] = i
+  ></app-recipe-item>
+</div>
+
