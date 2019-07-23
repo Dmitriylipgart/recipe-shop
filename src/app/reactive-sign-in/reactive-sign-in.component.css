@@ -1,0 +1,8 @@
+input.ng-dirty.ng-invalid {
+  border-color: red;
+}
+
+.ng-dirty.ng-invalid.form-control:focus {
+  border-color: red;
+  box-shadow: 0 0 0 0.2rem rgba(247, 25, 34, 0.3)
+}

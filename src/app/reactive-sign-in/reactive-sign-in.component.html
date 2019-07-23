@@ -1,0 +1,54 @@
+<div class="d-flex align-items-center flex-column justify-content-center h-100 my-auto">
+  <h4>Please sign in</h4>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input class="form-control form-control-lg"
+             placeholder="Email"
+             type="text"
+             id="signInEmail"
+             formControlName="email"
+      >
+      <span *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').errors['email']">Please enter a valid email
+      </span>
+      <span *ngIf="signUpForm.get('email').invalid
+      && signUpForm.get('email').errors['asyncForbiddenNames']"
+      >This email already exists
+      </span>
+      <span *ngIf="signUpForm.get('email').invalid
+      && signUpForm.get('email').errors['nameIsForbidden']"
+      >This email already exists
+      </span>
+      <span *ngIf="signUpForm.get('email').invalid
+      && signUpForm.get('email').errors['required']
+      && signUpForm.get('email').dirty"
+      >This field is required
+      </span>
+    </div>
+    <div class="form-group">
+      <input class="form-control form-control-lg"
+             placeholder="Password"
+             type="text"
+             name="password"
+             id="signInPassword"
+             formControlName="password"
+      >
+      <span
+        *ngIf="signUpForm.get('password').valid
+        && signUpForm.get('password').valid"
+      >Please enter a valid password</span>
+    </div>
+    <div class="form-group">
+      <input class="form-control form-control-lg"
+             placeholder="Repeat Password"
+             type="text"
+             name="passwordRepeat"
+             id="signInPasswordRepeat"
+             formControlName="passwordRepeat"
+      >
+    </div>
+    <div class="form-group">
+      <button class="btn btn-info btn-lg btn-block">Sign In</button>
+    </div>
+  </form>
+</div>
+
