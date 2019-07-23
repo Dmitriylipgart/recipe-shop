@@ -6,6 +6,7 @@ import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.compo
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {LogInComponent} from './log-in/log-in.component';
+import {ReactiveSignInComponent} from './reactive-sign-in/reactive-sign-in.component';
 
 const  routes: Routes = [
   {path: '', redirectTo: 'recipes', pathMatch: 'full'},
@@ -15,7 +16,7 @@ const  routes: Routes = [
       {path: ':id/detail', component: RecipeDetailComponent}
     ]},
   {path: 'shopping-list', component: ShoppingListComponent},
-  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-in', component: ReactiveSignInComponent},
   {path: 'log-in', component: LogInComponent}
 ];
 

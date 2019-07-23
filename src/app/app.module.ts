@@ -8,7 +8,7 @@ import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.compo
 import {RecipeItemComponent} from './recipes/recipe-list/recipe-item/recipe-item.component';
 import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DropdownDirective} from './shared/directives/dropdown.directive';
 import {RecipeDropdownComponent} from './recipes/recipe-dropdown/recipe-dropdown.component';
 import {ShoppingListService} from './shared/services/shopping-list.service';
@@ -16,6 +16,7 @@ import {AppRouterModule} from './app.router.module';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { ReactiveSignInComponent } from './reactive-sign-in/reactive-sign-in.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { LogInComponent } from './log-in/log-in.component';
     RecipeDropdownComponent,
     RecipeEditComponent,
     SignInComponent,
-    LogInComponent
+    LogInComponent,
+    ReactiveSignInComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRouterModule
+    AppRouterModule,
+    ReactiveFormsModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

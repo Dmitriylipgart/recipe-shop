@@ -1,23 +1,46 @@
 <div class="d-flex align-items-center flex-column justify-content-center h-100 my-auto">
   <h4>Please sign in</h4>
-  <form>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
     <div class="form-group">
       <input class="form-control form-control-lg"
              placeholder="Email"
              type="text"
-             ngModel>
+             ngModel
+             name="email"
+             required
+             email
+             #email="ngModel">
+      <p *ngIf="!email.valid && email.touched" class="text-danger">Please enter a valid email</p>
     </div>
     <div class="form-group">
       <input class="form-control form-control-lg"
              placeholder="Password"
              type="text"
-             ngModel>
+             ngModel
+             name="password"
+             required
+             #password="ngModel"
+      >
     </div>
     <div class="form-group">
-      <input class="form-control form-control-lg" placeholder="Repeat Password" type="text">
+      <input class="form-control form-control-lg"
+             placeholder="Repeat Password"
+             type="text"
+             ngModel
+             name="passwordRepeat"
+             required
+             #passwordRepeat="ngModel"
+      >
+      <p class="text-danger"
+        *ngIf="(password.value != passwordRepeat.value) && passwordRepeat.dirty"
+      >Passwords do not match</p>
     </div>
     <div class="form-group">
-      <button class="btn btn-info btn-lg btn-block">Sign In</button>
+      <button
+        class="btn btn-info btn-lg btn-block"
+        [disabled]="!f.valid"
+      >Sign In
+      </button>
     </div>
   </form>
 </div>
